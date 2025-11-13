@@ -1,4 +1,4 @@
-package com.example.calender.calendar;
+package com.example.calendar;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

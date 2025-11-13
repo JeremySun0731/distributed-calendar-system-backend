@@ -1,4 +1,4 @@
-package com.example.calender.calendar.user;
+package com.example.calendar.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

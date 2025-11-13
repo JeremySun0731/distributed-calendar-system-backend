@@ -1,4 +1,4 @@
-package com.example.calender.calendar.user;
+package com.example.calendar.user;
 
 public class UserService {
     private UserRepository userRepository;

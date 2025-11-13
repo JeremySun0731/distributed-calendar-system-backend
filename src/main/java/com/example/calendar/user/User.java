@@ -1,4 +1,6 @@
-package com.example.calender.calendar.user;
+package com.example.calendar.user;
+
+
 
 import jakarta.persistence.*;
 
