@@ -1,5 +1,7 @@
-package com.example.calendar.user;
+package com.example.calendar.user.controller;
 
+import com.example.calendar.user.entity.User;
+import com.example.calendar.user.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

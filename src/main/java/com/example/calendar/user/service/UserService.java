@@ -1,5 +1,7 @@
-package com.example.calendar.user;
+package com.example.calendar.user.service;
 
+import com.example.calendar.user.entity.User;
+import com.example.calendar.user.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

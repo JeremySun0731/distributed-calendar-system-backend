@@ -1,4 +1,4 @@
-package com.example.calendar.user;
+package com.example.calendar.user.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,12 +16,12 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         return http
+                .cors(cors -> {})
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/users/**").permitAll()
                         .anyRequest().authenticated()
-                )
-                .build();
+                ).build();
     }
     @Bean
     public PasswordEncoder passwordEncoder() {
