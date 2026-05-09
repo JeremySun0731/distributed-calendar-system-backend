@@ -7,6 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -46,5 +48,33 @@ public class UserService {
 
         //  Save the user to the database and return the saved entity
         return userRepository.save(user);
+    }
+
+    public User login(String email, String password) {
+
+        Optional<User> userOptional = userRepository.findByEmail(email);
+
+        if (userOptional.isEmpty()) {
+            throw new ResponseStatusException(
+                    HttpStatus.UNAUTHORIZED,
+                    "Invalid email or password"
+            );
+        }
+
+        User user = userOptional.get();
+
+        boolean matches = passwordEncoder.matches(
+                password,
+                user.getPassword()
+        );
+
+        if (!matches) {
+            throw new ResponseStatusException(
+                    HttpStatus.UNAUTHORIZED,
+                    "Invalid email or password"
+            );
+        }
+
+        return user;
     }
 }
